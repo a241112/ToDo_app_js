@@ -13,8 +13,15 @@
 <body>
   <ul>
     <li>Todo 1 <button>done</button></li>
-    <li class="done">Todo 2 <button>done</button></li>
+    <li>Todo 2 <button>done</button></li>
     <li>Todo 3 <button>done</button></li>
   </ul>
+<script>
+  const button = document.querySelector('button');
+  const li = document.querySelectorAll('li');
+  button.addEventListener('click' , () => {
+    li.classList.add('done');
+  });
+</script>
 </body>
 </html>
