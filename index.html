@@ -11,24 +11,20 @@
   </style>
 </head>
 <body>
-  <input type="text"> <button id="add-button">add</button>
+  <input id="new-todo" type="text"> <button id="add-button">add</button>
   <ul>
-    <li>Todo 1 <button>done</button></li>
-    <li>Todo 2 <button>done</button></li>
-    <li>Todo 3 <button>done</button></li>
   </ul>
 <script>
-  const buttonList = document.querySelectorAll('button');
-  [...buttonList].forEach((button) => {
-    button.addEventListener('click', () => {
-      const li = button.closest('li');
-      li.classList.add('done');
-    });
+  const button = document.getElementById('add-button');
+  button.addEventListener('click', () => {
+    const input = document.getElementById('new-todo');
+    
+    const li = document.createElement('li');
+    li.innerText = input.value;
+
+    const ul = document.querySelector('ul');
+    ul.appendChild(li);
   });
-  // const li = document.querySelectorAll('li');
-  // button.addEventListener('click' , () => {
-    // li.classList.add('done');
-  // });
 </script>
 </body>
 </html>
